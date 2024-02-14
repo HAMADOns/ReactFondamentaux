@@ -22,13 +22,13 @@
 <html>
     <head>
     </head>
-    <body >
-        <div id="root"></div>  
+    <body id="root">
+        <!-- <div id="root"></div>   -->
         <script>
             var divElement=document.createElement('div')
-            div.textContent = 'Bienvenue sur mon site'
-            div.className = 'rootContainer'
-            document.getElementById('root').appendChild(divElement)
+            divElement.textContent = 'Bienvenue sur mon site'
+            divElement.className = 'rootContainer'
+            document.getElementById('root').append(divElement)
 
         </script>      
     </body>
