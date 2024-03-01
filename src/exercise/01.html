@@ -24,16 +24,23 @@
     </head>
     <body>
         <!-- exercice -->
-        <div id="root"></div>
+        <!-- <div id="root"></div>
         <script>
             var newDiv = document.createElement("div")
             newDiv.textContent= 'Bienvenue sur mon site' // ou newDiv.innerHTML = '...'
             newDiv.className = 'rootContainer'
             document.getElementById('root').appendChild(newDiv) // ou append(newDiv)
-        </script>
+        </script> -->
         <!-- Bonus  -->
         <script>
+            var newRoot = document.createElement('div')
+            newRoot.setAttribute('id','root')  // ou newRoot.id ="root"
+            document.body.appendChild(newRoot)
 
+            var newDiv = document.createElement("div")
+            newDiv.textContent= 'Bienvenue sur mon site' // ou newDiv.innerHTML = '...'
+            newDiv.className = 'rootContainer'
+            document.getElementById('root').appendChild(newDiv)
         </script>
 
 
