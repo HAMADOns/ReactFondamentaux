@@ -11,28 +11,45 @@
      
   </head>
   <body>
-    <div id="root"></div>
-    <script>
-      const rootEl = document.getElementById('root')
+    <div id="root">    </div>
+      <!-- <div class="rootContainer">
+        <h1>Bienvenue</h1>
+        <h2>Commencez ici</h2> 
+    
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry
+        </p>
+      </div> -->
+      <script>
+        //const rootEl = document.getElementById('root')
 
-      // Il va falloir maintenant réimplémenter ce code en React
-      // ⛏️ Remplace les 3 lignes suivantes
-      // 🤖 Utilise React.createElement
+        // Il va falloir maintenant réimplémenter ce code en React
+        // ⛏️ Remplace les 3 lignes suivantes
+        // 🤖 Utilise React.createElement
+        //JS natif
+        // const divEl = document.createElement('div')
+        // divEl.textContent = 'Bienvenue sur mon site'
+        // divEl.className = 'rootContainer'
+        //React
+        //const divEl = React.createElement('div', {className : 'rootContainer' , children : 'Bienvenue sur mon site'})
+        //JS natif
+        //document.getElementById('root').append(divEl)
+        //rootEl.appendChild(divEl)
+        //React
+        //ReactDOM.render(divEl,rootEl)
 
-      //JS natif
-      // const divEl = document.createElement('div')
-      // divEl.textContent = 'Bienvenue sur mon site'
-      // divEl.className = 'rootContainer'
+        //Bonus
+        const divRoot = document.getElementById('root')
 
-      //React
-      const divEl = React.createElement('div', {className : 'rootContainer' , children : 'Bienvenue sur mon site'})
-
-      //JS natif
-      //document.getElementById('root').append(divEl)
-      //rootEl.appendChild(divEl)
-
-      //React
-      ReactDOM.render(divEl,rootEl)
-    </script>
+        const newDiv = React.createElement('div', {className:'rootContainer', children: [
+          React.createElement('h1', null,'Bienvenue'),
+          React.createElement('h2', null,'Commencez ici'),
+          React.createElement('p', null,'Lorem Ipsum is simply dummy text of the printing and typesetting industry')          
+        ]})    
+        
+        ReactDOM.render(newDiv, divRoot)
+      </script>
+    
   </body>
 </html>
