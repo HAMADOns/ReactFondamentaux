@@ -13,17 +13,20 @@
     <!-- 🐶 Pour que Babel prenne en compte le code JavaScipt, il faut rajouter un attribut `type="text/babel"`
     A la balise <script> -->
     <script type="text/babel">
-      const rootEl = document.getElementById('root')
+      const rootEl = document.getElementById('root')    
+ 
+      const className = 'rootContainer'     
 
-     
-
-      const className = 'rootContainer'
-      const h1El = <h1> bienvenu </h1>
-      const h2El = <h2> sur le site </h2>
-      const pEl = <p> lsdkfjslkgjh </p>
-
-      const divEl = <div className={className}>{h1El} {h2El} {pEl}</div>
-     
+      const children = <>  <h1> bienvenu </h1>
+      <h2> sur le site </h2>
+      <p> de Ons </p>
+       </>  // ou <React.Fragment> </React.Fragment>
+      
+      const props = {className, children}
+      //1ere méthode : 
+      //const divEl = <div {...props}></div>
+      //2eme methode : 
+      const divEl = <div className={className} children ={children}></div>
       ReactDOM.render(divEl, rootEl)
     </script>
   </body>
