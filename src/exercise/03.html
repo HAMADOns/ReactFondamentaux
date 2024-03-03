@@ -15,18 +15,13 @@
     <script type="text/babel">
       const rootEl = document.getElementById('root')
 
-      // 🐶 Il va falloir maintenant réimplémenter avec JSX
-      const divEl = React.createElement('div',{className : "rootContainer"},'Bienvenue sur mon site')
-      // divEl.textContent = 'Bienvenue sur mon site'
-      // divEl.className = 'rootContainer'
+      const welcome = 'Bienvenue'
+      const site = 'sur mon site'
+      const children = `${welcome} ${site}`
+      const className = 'rootContainer'
 
-      //const divEl = <div className="rootContainer"> Bienvenue sur mon site </div>
-      // 🐶 Crée une variable divEl qui contient du JSX (une div avec un texte et une class comme
-      // le resultat final html attendu)
-      // 🤖 Attention aux attributs en React qui diffèrent légèrement du HTML ex : class -> className
-      // 📑 https://fr.reactjs.org/docs/dom-elements.html
-
-      //document.getElementById('root').append(divEl)
+      const divEl = <div className={className}> {children} </div>
+     
       ReactDOM.render(divEl, rootEl)
     </script>
   </body>
