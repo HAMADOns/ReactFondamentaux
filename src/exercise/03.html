@@ -17,11 +17,12 @@
 
      
 
-      const children = 'Bienvenue sur mon site'
       const className = 'rootContainer'
-      const props = {children, className}
+      const h1El = <h1> bienvenu </h1>
+      const h2El = <h2> sur le site </h2>
+      const pEl = <p> lsdkfjslkgjh </p>
 
-      const divEl = <div {...props}></div>
+      const divEl = <div className={className}>{h1El} {h2El} {pEl}</div>
      
       ReactDOM.render(divEl, rootEl)
     </script>
