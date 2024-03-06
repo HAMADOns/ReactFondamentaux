@@ -6,32 +6,31 @@
     <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone@7.15.1/babel.js"></script>
+    <script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
   </head>
   <body>
     <div id="root"></div>
     <script type="text/babel">
       // 🐶 Fait une fonction 'paragraphe' qui retourne l'element <p> avec le texte
-        function Paragraphe( {children}){
-          return  React.createElement('p',{className : "paragraphe"},
-        children  )
+        function Paragraphe( {text, auteur}){
+          return  <p className ="paragraphe"> {text} : {auteur} </p>
           
+        }
+        Paragraphe.propTypes = {
+          text : PropTypes.string.isRequired,
+          auteur : PropTypes.string
         }
       // 🐶 Utilise cette fonction à la place des balises <p>
       // 🤖 {paragraphe({children:'Lorem Ipsum ...'})}
-      const newH1 = <h1>Bienvenue sur mon site Test</h1>
       const divElement = (
-        <div className="rootContainer">
-          <h1>Bienvenue sur mon site</h1>
-          {newH1}
-          {Paragraphe({children:'Lorem Ipsum is simply dummy text ...'})}
-          {Paragraphe({children:'Lorem Ipsum has been the industry ...'})}
-          {Paragraphe({children:'when an unknown printer took a galley ...'})}
-          <Paragraphe>Lorem Ipsum is simply dummy text ...</Paragraphe>
-          <Paragraphe children={'Lorem Ipsum is simply dummy text ...'}/>
+        <div className="rootContainer">      
+          
+          <Paragraphe text='Lorem Ipsum is simply dummy text ...'  
+          auteur = 'fdhqfdhfgh' />
           
         </div>
       )
-
+      
       ReactDOM.render(divElement, document.getElementById('root'))
     </script>
   </body>
