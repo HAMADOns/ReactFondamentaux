@@ -17,10 +17,16 @@
  
       const className = 'rootContainer'     
 
-      const children = <>  <h1> bienvenu </h1>
-      <h2> sur le site </h2>
-      <p> de Ons </p>
-       </>  // ou <React.Fragment> </React.Fragment>
+      //1ere methode 
+      const newH1 = <h1> bienvenu </h1>
+      const newH2 = <h2> sur le site </h2>
+      const newP = <p> de Ons </p>
+      const children = <>{newH1} {newH2} {newP}</>
+      // 2eme methode 
+      // const children = <>  <h1> bienvenu </h1>
+      // <h2> sur le site </h2>
+      // <p> de Ons </p>
+      //  </>  // ou <React.Fragment> </React.Fragment>
       
       const props = {className, children}
       //1ere méthode : 
