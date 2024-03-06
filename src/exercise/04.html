@@ -12,7 +12,9 @@
     <script type="text/babel">
       // 🐶 Fait une fonction 'paragraphe' qui retourne l'element <p> avec le texte
         function Paragraphe( {children}){
-          return <p className="paragraphe">{children}</p>
+          return  React.createElement('p',{className : "paragraphe"},
+        children  )
+          
         }
       // 🐶 Utilise cette fonction à la place des balises <p>
       // 🤖 {paragraphe({children:'Lorem Ipsum ...'})}
