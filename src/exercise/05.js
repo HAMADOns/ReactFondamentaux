@@ -16,9 +16,9 @@ import '../05-styles.css'
 // et la couleur du texte
 // 🤖 style:{{color:'white', backgroundColor:'red'}}
 
-const smallContainer = <div>Petit conteneur dark texte blanc</div>
-const mediumContainer = <div>Moyen conteneur rose texte noire</div>
-const largeContainer = <div>Grand conteneur vert rose texte noire</div>
+const smallContainer = <div className="container-small" style={{color:'white', backgroundColor:'black'}}>Petit conteneur dark texte blanc</div>
+const mediumContainer = <div className="container--medium" style={{color:'black', backgroundColor:'pink'}}>Moyen conteneur rose texte noire</div>
+const largeContainer = <div className="container--large " style={{color:'black', backgroundColor:'green'}}>Grand conteneur vert rose texte noire</div>
 
 function App() {
   return (
