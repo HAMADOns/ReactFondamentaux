@@ -16,7 +16,7 @@ const largeContainer = <div className="container container--large "
         Grand conteneur vert rose texte noire</div>
 
 function Container({ children,style, color, size}){
-  const classSize = size ? `container ${size}` :''  
+  const classSize = size ? `container--${size}` :''  
  
       return <div  
       className={classSize}   
