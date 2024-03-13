@@ -7,11 +7,11 @@ import * as React from 'react'
 
 const skills = []
 // 🐶 Corrige ce code avec des keys uniques sur les elements <li>
-skills.push(<li>HTML</li>)
-skills.push(<li>CSS</li>)
-skills.push(<li>JS</li>)
-skills.push(<li>REACT</li>)
-skills.push(<li>ANGULAR</li>)
+skills.push(<li key="1">HTML</li>)
+skills.push(<li key="2">CSS</li>)
+skills.push(<li key="3">JS</li>)
+skills.push(<li key="4">REACT</li>)
+skills.push(<li key="5">ANGULAR</li>)
 
 function MesSkills() {
   return <ul>{skills.map(skill => skill)}</ul>
