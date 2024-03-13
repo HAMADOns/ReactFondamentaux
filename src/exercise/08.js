@@ -17,10 +17,7 @@ const initialskills = [
   {id: '65d4', value: 'ANGULAR'},
 ]
 
-function addSkillPython (){
-  // skills.push( {id : `${Math.random()}` , value : 'Python'})
-  // console.log('skills',skills)
-}
+
 // 🐶 Créé un button dans le render et sur l'evenement onclick passer la fonction 'addSkillPython'
 // 🤖 <button onClick={addSkillPython}
 function MesSkills() {
