@@ -9,7 +9,7 @@ import * as React from 'react'
 // 🐶 dans la fonction 'addSkillPython' logue le tableau skills
 // 🤖 console.log('skills',skills)
 
-const skills = [
+const initialskills = [
   {id: 'e313', value: 'HTML'},
   {id: 'f980', value: 'CSS'},
   {id: '11eb', value: 'JS'},
@@ -17,9 +17,19 @@ const skills = [
   {id: '65d4', value: 'ANGULAR'},
 ]
 
+function addSkillPython (){
+  // skills.push( {id : `${Math.random()}` , value : 'Python'})
+  // console.log('skills',skills)
+}
 // 🐶 Créé un button dans le render et sur l'evenement onclick passer la fonction 'addSkillPython'
 // 🤖 <button onClick={addSkillPython}
 function MesSkills() {
+  const [skills,setSkills] = React.useState(initialskills)
+  function addSkillPython (){
+    // skills.push( {id : `${Math.random()}` , value : 'Python'})
+    // console.log('skills',skills)
+    setSkills([...skills , {id : `${Math.random()}` , value : 'Python'}])
+  }
   return (
     <>
       <ul>
@@ -27,12 +37,14 @@ function MesSkills() {
           <li key={skill.id}>{skill.value}</li>
         ))}
       </ul>
-    </>
+      <button onClick={addSkillPython}>Ajouter Skill Python</button>      
+    </>    
   )
 }
 
-function App() {
-  return <MesSkills />
+function App() { 
+   
+  return <MesSkills /> 
 }
 
 export default App
