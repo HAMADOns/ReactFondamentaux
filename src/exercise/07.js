@@ -5,7 +5,13 @@ import * as React from 'react'
 
 // 🐶 Le code suivant génère un warning :  Warning: Each child in a list should have a unique "key" prop
 
-const skills = ['HTML', 'CSS', 'JS', 'REACT', 'ANGULAR']
+const skills = [
+  {id: 'e313', value: 'HTML'},
+  {id: 'f980', value: 'CSS'},
+  {id: '11eb', value: 'JS'},
+  {id: '9a03', value: 'REACT'},
+  {id: '65d4', value: 'ANGULAR'},
+]
 // 🐶 Corrige ce code avec des keys uniques sur les elements <li>
 
 
@@ -16,7 +22,7 @@ const skills = ['HTML', 'CSS', 'JS', 'REACT', 'ANGULAR']
 // skills.push(<li>ANGULAR</li>)
 
 function MesSkills() {
-  return <ul>{skills.map((skill , index) => <li key = {index}> {skill}</li>)}</ul>
+  return <ul>{skills.map(skill => <li key = {skill.id} > {skill.value}</li>)}</ul>
 }
 
 function App() {
