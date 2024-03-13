@@ -3,7 +3,13 @@
 
 import * as React from 'react'
 
+// function handleSubmit(event){
+//   event.preventDefault()
+//   alert (`bonjour ${event.target.elements.emailInput.value}`)
+// }
 function LoginForm() {
+  const handleSubmit = event => {event.preventDefault()
+    alert (`bonjour ${event.target.elements.emailInput.value}`)}
   // 🐶 Gère l'événement onSubmit de <form> en créant une fonction 'handleSubmit'
   // 🤖 <form onSubmit={handleSubmit}>
   // 🤖 Utilise `event.preventDefault()` dans la fonction handleSubmit pour stopper
@@ -12,7 +18,7 @@ function LoginForm() {
   // 🐶 Affiche ensuite une popup Bonjour 'email@email.fr'
   // 🤖 Utilise `event.target.elements.emailInput.value` pour récupèrer la valeur de l'email
   return (
-    <form>
+    <form onSubmit={handleSubmit} >
       <label>
         Adresse email :
         <input type="text" name="emailInput" />
