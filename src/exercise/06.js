@@ -13,19 +13,25 @@ const buttonCreate = <button>Créer</button>
 const buttonUpdate = <button>Modifier</button>
 const buttonDelete = <button>Supprimer</button>
 
-function ButtonActions({isAdmin = false}){
-  
+function AdminActions (){
+  return <div>{buttonRead}{buttonCreate}{buttonUpdate}{buttonDelete} </div>
+}
 
-  return ( isAdmin ? <div>{buttonRead}{buttonCreate}{buttonUpdate}{buttonDelete} </div> : 
-      <div> {buttonRead} </div> )
+function GuestActions (){
+  return  <div> {buttonRead} </div> 
+}
+function ButtonActions({isAdmin = false}){ 
+
+  return ( isAdmin ? <AdminActions/> : 
+  <GuestActions/> )
 }
 
 
 function App() {
   return (
-    <div>    
-      <ButtonActions isAdmin = {true} />
-    </div>
+       
+      <ButtonActions isAdmin = {false} />
+    
   )
 }
 
