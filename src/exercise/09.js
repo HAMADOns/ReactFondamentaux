@@ -9,10 +9,12 @@ import * as React from 'react'
 // }
 function LoginForm() {
 
-  const emailInputRefs = React.useRef()
-
+  const [email, setEmail ] = React.useState()
+  const handleChange = event => {
+    setEmail('1'+event.target.value)
+  }
   const handleSubmit = event => {event.preventDefault()
-    alert (`bonjour ${emailInputRefs.current.value}`)}
+    alert (`bonjour ${email}`)}
   // 🐶 Gère l'événement onSubmit de <form> en créant une fonction 'handleSubmit'
   // 🤖 <form onSubmit={handleSubmit}>
   // 🤖 Utilise `event.preventDefault()` dans la fonction handleSubmit pour stopper
@@ -24,7 +26,7 @@ function LoginForm() {
     <form onSubmit={handleSubmit} >
       <label>
         Adresse email :
-        <input type="text" name="emailInput" ref = {emailInputRefs} />
+        <input type="text" name="emailInput" value = {email} onChange={handleChange} />
       </label>
       <input type="submit" value="Connexion" />
     </form>
