@@ -9,9 +9,11 @@ import * as React from 'react'
 // }
 function LoginForm() {
 
+  const [error,setError] = React.useState()
   const [email, setEmail ] = React.useState()
   const handleChange = event => {
-    setEmail('1'+event.target.value)
+    setError (event.target.value.includes('@') ? null : 'email non valide')
+    setEmail(event.target.value)
   }
   const handleSubmit = event => {event.preventDefault()
     alert (`bonjour ${email}`)}
@@ -29,6 +31,7 @@ function LoginForm() {
         <input type="text" name="emailInput" value = {email} onChange={handleChange} />
       </label>
       <input type="submit" value="Connexion" />
+      <div style = {{color : 'red'}}  > {error} </div>
     </form>
   )
 }
